@@ -56,17 +56,15 @@ AI is used in the system to make decisions smarter and faster:
 ## 🛠 Tech Stack
 
 **Frontend:**
-- HTML
-- CSS
-- JavaScript  
-(or React.js for advanced version)
+ 
+- React.js 
 
 **Backend:**
 - Node.js + Express.js  
-(or PHP Laravel)
+
 
 **Database:**
-- MySQL / MongoDB
+- PostgresSQL
 
 **AI Tools:**
 - Google Gemini API
@@ -77,7 +75,7 @@ AI is used in the system to make decisions smarter and faster:
 - Google Maps API (location tracking)
 
 **Deployment:**
-- Vercel / Netlify / Render / Railway
+- Vercel / Netlify / Render
 
 ---
 
