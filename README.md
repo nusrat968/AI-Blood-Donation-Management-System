@@ -120,7 +120,12 @@ This system directly supports emergency healthcare by reducing the time required
 - **Project Name:** AI Blood Donation Management System  
 - **Team ID:** CSE4204-8D-T05 
 - **Section:** 8D 
-- **Course:** Mobile computing lab
+**Team Leader:** Nusrat Jahan Sarna (ID: 11220320968)
+
+### 👥 Team Members
+1. Farhana Rahman Adiba (ID: 11220320976)  
+2. Arpita Biswas (ID: 11220320978)  
+3. Nazia Musharrat Neha (ID: 112203201039)
 
 ---
 
