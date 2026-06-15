@@ -131,7 +131,7 @@ Relationships:
 * One **Hospital** can manage many **Blood Requests**
 * One **Patient** can create many **Blood Requests**
 
-Full ER Diagram is available in `docs/ERDiagram.pdf`.
+Full ER Diagram is available in `CSE4204-8D-T05_ERDiagram.pdf`.
 
 ---
 
@@ -153,7 +153,7 @@ Full ER Diagram is available in `docs/ERDiagram.pdf`.
 * Admin manages users and monitors system activity
 * AI Engine matches donors, prioritizes emergency requests, and powers chatbot assistant
 
-Full Use Case Diagram is available in `docs/UseCaseDiagram.pdf`.
+Full Use Case Diagram is available in `CSE4204-8D-T05_UseCaseDiagram.pdf`.
 
 ---
 
@@ -191,7 +191,7 @@ System updates Blood Request status
 End
 ```
 
-Full Activity Diagram is available in `docs/ActivityDiagram.pdf`.
+Full Activity Diagram is available in `CSE4204-8D-T05_ActivityDiagram.pdf`.
 
 ---
 
