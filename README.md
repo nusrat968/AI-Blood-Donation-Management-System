@@ -367,7 +367,7 @@ Benefits include:
 
 * Faster donor discovery
 * Reduced manual effort
-* Improved hospital support
+* Improved hospital support 
 * Better emergency response
 * Smarter donor recommendations
 
@@ -382,11 +382,7 @@ Benefits include:
 * GPS-Based Emergency Support
 * SMS Notification Integration
 
----
 
-# Real-World Impact
-
-This project addresses a real healthcare problem by helping patients find blood donors more efficiently. By reducing delays and improving donor matching, the system can support hospitals and potentially save lives during emergency situations.
 
 ---
 
