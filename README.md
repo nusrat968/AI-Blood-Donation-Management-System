@@ -10,7 +10,7 @@ The system uses Artificial Intelligence to recommend suitable blood donors based
 
 **Project Name:** AI Blood Donation Management System
 
-**Course:** CSE4204 – Software Engineering
+**Course:** CSE4204 – Mobile Computing
 
 **Team ID:** CSE4204-8D-T05
 
