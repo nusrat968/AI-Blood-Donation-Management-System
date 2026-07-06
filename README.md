@@ -1,124 +1,131 @@
 # 🩸 AI Blood Donation Management System
 
-An AI-powered web application that connects blood donors, patients, and hospitals to provide faster and smarter blood donation services during emergencies.
+<p align="center">
+An AI-powered web application that connects <strong>blood donors</strong>, <strong>patients</strong>, and <strong>hospitals</strong> to make blood donation faster, smarter, and more efficient during emergencies.
+</p>
 
-The system uses Artificial Intelligence to recommend suitable blood donors based on blood group, location, availability, and emergency priority. It also provides secure authentication, blood request management, donation history, and an AI chatbot to assist users.
+<p align="center">
+
+![React](https://img.shields.io/badge/React-19-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
+![Gemini](https://img.shields.io/badge/Google-Gemini-red)
+![Status](https://img.shields.io/badge/Status-Frontend%20%26%20Backend%20Completed-success)
+
+</p>
 
 ---
 
-## 📌 Project Information
+# 📖 Table of Contents
 
-**Project Name:** AI Blood Donation Management System
-
-**Course:** CSE4204 – Mobile Computing
-
-**Team ID:** CSE4204-8D-T05
-
-**Section:** 8D
+* About
+* Features
+* Technology Stack
+* System Architecture
+* Repository Structure
+* Database
+* REST API
+* Authentication
+* Installation
+* Environment Variables
+* Documentation
+* Team Members
+* Project Status
+* Future Improvements
+* License
 
 ---
 
-## 👥 Team Members
+# 📌 About
 
- Name                 | Student ID  | Responsibility                            
+The AI Blood Donation Management System helps patients quickly find compatible blood donors using Artificial Intelligence.
 
- Nusrat Jahan Sarna    11220320968  Team Leader, Documentation, GitHub
- Farhana Rahman Adiba  11220320976  API ,testing                      
- Arpita Biswas         11220320978  Frontend Development                       
- Nazia Musharrat Neha  11220321039  Backend Development                
+The application provides:
+
+* Secure user authentication
+* Blood donor registration
+* Blood request management
+* Hospital management
+* AI-based donor recommendation
+* AI chatbot assistance
+* Emergency request prioritization
+* Donation history tracking
 
 ---
 
 # ✨ Features
 
-### Authentication
+## Authentication
 
 * User Registration
 * Secure Login
 * JWT Authentication
-* Password Encryption using bcrypt
+* Password Encryption (bcrypt)
 * Role-Based Authorization
 
-### Donor Management
+## Donor Module
 
-* Register as Blood Donor
-* Update Donor Information
+* Register Donor
+* Update Donor Profile
 * Manage Availability
-* View Donation History
+* Donation History
 
-### Patient Features
+## Patient Module
 
 * Request Blood
-* Search Blood Donors
-* Track Request Status
+* Search Donors
+* Track Requests
 
-### Hospital Features
+## Hospital Module
 
-* Manage Blood Requests
+* Hospital Dashboard
+* Manage Requests
 * View Available Donors
-* Update Emergency Requests
 
-### AI Features
+## AI Module
 
 * AI Donor Recommendation
-* Emergency Priority Scoring
-* AI Chatbot (Google Gemini API)
+* Emergency Priority Prediction
+* AI Chatbot
 * Donor Availability Prediction
 
-### Admin Features
+## Admin Module
 
-* Manage Users
-* Manage Blood Requests
-* View Reports
-* System Monitoring
+* User Management
+* Blood Request Monitoring
+* Reports & Analytics
 
 ---
 
 # 🛠 Technology Stack
 
-## Frontend
-
-* React.js
-
-## Backend
-
-* Node.js
-* Express.js
-
-## Database
-
-* PostgreSQL
-
-## Authentication
-
-* JWT
-* bcrypt
-
-## AI
-
-* Google Gemini API
-
-## Other Tools
-
-* Google Maps API
-* Firebase (Notifications)
-* Postman
-* GitHub
+| Layer           | Technology           |
+| --------------- | -------------------- |
+| Frontend        | React.js             |
+| Backend         | Node.js + Express.js |
+| Database        | PostgreSQL           |
+| Authentication  | JWT + bcrypt         |
+| AI              | Google Gemini API    |
+| Maps            | Google Maps API      |
+| Notifications   | Firebase             |
+| API Testing     | Postman              |
+| Version Control | Git & GitHub         |
 
 ---
 
 # 🏗 System Architecture
 
 ```text
-React.js
-     │
-     ▼
-Node.js + Express.js
-     │
-     ▼
-PostgreSQL
-     │
-     ▼
+React.js Frontend
+        │
+        ▼
+Express.js REST API
+        │
+        ▼
+PostgreSQL Database
+        │
+        ▼
 Google Gemini API
 ```
 
@@ -127,7 +134,7 @@ Google Gemini API
 # 📂 Repository Structure
 
 ```text
-AI-Blood-Donation-Management-System
+AI-Blood-Donation-Management-System/
 │
 ├── frontend/
 │   ├── public/
@@ -135,6 +142,7 @@ AI-Blood-Donation-Management-System
 │   ├── components/
 │   ├── pages/
 │   ├── services/
+│   ├── context/
 │   └── package.json
 │
 ├── backend/
@@ -155,18 +163,10 @@ AI-Blood-Donation-Management-System
 │   └── migrations/
 │
 ├── documentation/
-│   ├── ProjectProposal.pdf
-│   ├── SRS.pdf
-│   ├── SystemDesign.pdf
-│   ├── BackendProgress.pdf
-│   ├── UIDesign.pdf
-│   ├── ERDiagram.pdf
-│   ├── UseCaseDiagram.pdf
-│   ├── ActivityDiagram.pdf
-│   └── APICollection.json
 │
 ├── postman/
-│   └── AI-Blood-Donation-System.postman_collection.json
+│
+├── screenshots/
 │
 ├── README.md
 └── .gitignore
@@ -174,81 +174,9 @@ AI-Blood-Donation-Management-System
 
 ---
 
-# 🚀 Implemented Modules
-
-* User Authentication
-* JWT Authorization
-* Password Encryption
-* Donor Management
-* Patient Management
-* Hospital Management
-* Blood Request Management
-* Donation History
-* PostgreSQL Database
-* RESTful APIs
-* AI Chatbot
-* AI Donor Recommendation
-* Error Handling
-* Input Validation
-* API Testing
-
----
-
-# 🔗 REST API Endpoints
-
-## Authentication
-
-| Method | Endpoint           
-
- POST    /api/auth/register 
- POST    /api/auth/login    
- POST    /api/auth/logout   
-
----
-
-## User
-
-| Method | Endpoint           
-
- GET     /api/users/profile 
- PUT     /api/users/profile 
-
----
-
-## Donor
-
-| Method | Endpoint        
-
- GET     /api/donors     
- GET     /api/donors/:id 
- PUT     /api/donors/:id 
-
----
-
-## Blood Request
-
-| Method | Endpoint          
-
- POST    /api/requests     
- GET     /api/requests     
- PUT     /api/requests/:id 
-
----
-
-## AI
-
- Method  Endpoint            
- 
- POST    /api/chat           
- POST    /api/recommendation 
-
----
-
 # 🗄 Database
 
-The project uses PostgreSQL with relational tables.
-
-Main tables include:
+The PostgreSQL database contains the following tables:
 
 * Users
 * Donors
@@ -257,53 +185,171 @@ Main tables include:
 * Blood Requests
 * Donation History
 
-All tables use proper primary keys, foreign keys, validations, and relationships.
+The database includes:
 
+* Primary Keys
+* Foreign Keys
+* Relationships
+* Constraints
+* Input Validation
 
+---
+
+# 🔗 REST API
+
+## Authentication
+
+| Method | Endpoint           |
+| ------ | ------------------ |
+| POST   | /api/auth/register |
+| POST   | /api/auth/login    |
+| POST   | /api/auth/logout   |
+
+### User
+
+| Method | Endpoint           |
+| ------ | ------------------ |
+| GET    | /api/users/profile |
+| PUT    | /api/users/profile |
+
+### Donor
+
+| Method | Endpoint        |
+| ------ | --------------- |
+| GET    | /api/donors     |
+| GET    | /api/donors/:id |
+| PUT    | /api/donors/:id |
+
+### Blood Requests
+
+| Method | Endpoint          |
+| ------ | ----------------- |
+| POST   | /api/requests     |
+| GET    | /api/requests     |
+| PUT    | /api/requests/:id |
+
+### AI
+
+| Method | Endpoint            |
+| ------ | ------------------- |
+| POST   | /api/chat           |
+| POST   | /api/recommendation |
+
+---
+
+# 🔐 Authentication
+
+The project uses:
+
+* JWT Authentication
+* Password Hashing with bcrypt
+* Protected Routes
+* Role-Based Authorization
 
 ---
 
 # 🧪 API Testing
 
-All APIs have been tested using Postman.
+API testing is completed using Postman.
 
-Tested Features:
+Verified:
 
 * User Registration
 * Login
-* JWT Authentication
+* Authentication
 * CRUD Operations
-* Validation Rules
-* Error Responses
+* Error Handling
 * Database Connectivity
 
 ---
 
+# 🚀 Installation
 
-
-# ⚙ Installation
+## Clone Repository
 
 ```bash
 git clone https://github.com/your-username/AI-Blood-Donation-Management-System.git
+```
 
-cd AI-Blood-Donation-Management-System
+## Backend
 
-# Backend
+```bash
 cd backend
 npm install
 npm run dev
+```
 
-# Frontend
-cd ../frontend
+## Frontend
+
+```bash
+cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 ---
 
+# ⚙ Environment Variables
+
+Backend `.env`
+
+```env
+PORT=5000
+
+DATABASE_URL=your_postgresql_connection_string
+
+JWT_SECRET=your_secret_key
+
+GEMINI_API_KEY=your_gemini_api_key
+```
 
 ---
 
+# 📚 Documentation
+
+Project documentation includes:
+
+* Proposal
+* SRS
+* UI/UX Design
+* System Design
+* Backend Progress
+* Frontend Progress
+* ER Diagram
+* Use Case Diagram
+* Activity Diagram
+* API Collection
+
+---
+
+# 👥 Team Members
+
+| Name                 | Student ID  | Responsibility                     |
+| -------------------- | ----------- | ---------------------------------- |
+| Nusrat Jahan Sarna   | 11220320968 | Team Leader, Documentation, GitHub |
+| Farhana Rahman Adiba | 11220320976 | API Development & Testing          |
+| Arpita Biswas        | 11220320978 | Frontend Development               |
+| Nazia Musharrat Neha | 11220321039 | Backend Development                |
+
+---
+
+# 📈 Project Status
+
+| Module               | Status         |
+| -------------------- | -------------- |
+| UI/UX Design         | ✅ Completed    |
+| Frontend Development | ✅ Completed    |
+| Backend Development  | ✅ Completed    |
+| PostgreSQL Database  | ✅ Completed    |
+| REST APIs            | ✅ Completed    |
+| Authentication       | ✅ Completed    |
+| API Integration      | ✅ Completed    |
+| AI Integration       | ✅ Completed    |
+| API Testing          | ✅ Completed    |
+| Documentation        | ✅ Completed    |
+| Deployment           | 🚧 In Progress |
+
+---
 
 
 
