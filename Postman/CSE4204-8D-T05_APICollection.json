@@ -8,36 +8,16 @@
   },
   "item": [
     {
-      "name": "AI Donor Match",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {",
-              "    pm.response.to.have.status(200);",
-              "});"
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        }
-      ],
+      "name": "Register",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"bloodGroup\": \"A+\",\r\n  \"district\": \"Khulna\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
+          "raw": "{\r\n  \"name\": \"Farhana\",\r\n  \"email\": \"farhana@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"donor\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:5000/api/ai/match",
+          "raw": "http://localhost:5000/api/auth/register",
           "protocol": "http",
           "host": [
             "localhost"
@@ -45,64 +25,21 @@
           "port": "5000",
           "path": [
             "api",
-            "ai",
-            "match"
+            "auth",
+            "register"
           ]
-        },
-        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
-      },
-      "response": []
-    },
-    {
-      "name": "Post data",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.test(\"Successful POST request\", function () {",
-              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
-              "});",
-              ""
-            ]
-          }
         }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "postman-echo.com/post",
-          "host": [
-            "postman-echo",
-            "com"
-          ],
-          "path": [
-            "post"
-          ]
-        },
-        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
       },
       "response": []
     },
     {
-      "name": "AI Chatbot",
+      "name": "Login",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"message\":\"I need A+ blood\"\r\n}",
+          "raw": "{\r\n  \"email\": \"farhana@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -110,7 +47,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:5000/api/chatbot/message",
+          "raw": "http://localhost:5000/api/auth/login",
           "protocol": "http",
           "host": [
             "localhost"
@@ -118,67 +55,26 @@
           "port": "5000",
           "path": [
             "api",
-            "chatbot",
-            "message"
+            "auth",
+            "login"
           ]
         }
       },
       "response": []
     },
     {
-      "name": "Location Search",
+      "name": "Dashboard",
       "request": {
         "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/api/ai/search?district=Khulna",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "ai",
-            "search"
-          ],
-          "query": [
-            {
-              "key": "district",
-              "value": "Khulna"
-            }
-          ]
-        }
+        "header": []
       },
       "response": []
     },
     {
-      "name": "Donation Recommendation",
+      "name": "Donors",
       "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"age\":22,\r\n  \"lastDonation\":\"2025-10-01\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:5000/api/ai/recommend",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "ai",
-            "recommend"
-          ]
-        }
+        "method": "GET",
+        "header": []
       },
       "response": []
     }
