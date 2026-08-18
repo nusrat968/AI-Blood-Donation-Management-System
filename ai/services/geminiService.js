@@ -1,19 +1,14 @@
-// ai/services/geminiService.js
+// backend/ai/services/geminiService.js
 
 const { SYSTEM_PROMPT, buildUserPrompt } = require("../prompts/donorMatchPrompt");
+const { buildChatPrompt } = require("../prompts/chatPrompt");
 
 // NOTE: Gemini 1.x and 2.x models are blocked for newly created API keys/projects.
 // New keys only work with 3.x generation models — using gemini-3.5-flash here.
 const GEMINI_API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent";
 
-/**
- * Calls the Gemini API to get donor match recommendations.
- * Handles network failures, timeouts, and invalid responses gracefully.
- */
-async function getDonorMatches(requestData, availableDonors) {
-  const userPrompt = buildUserPrompt(requestData, availableDonors);
-
+async function callGemini(promptText) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
 
@@ -28,7 +23,7 @@ async function getDonorMatches(requestData, availableDonors) {
           contents: [
             {
               role: "user",
-              parts: [{ text: `${SYSTEM_PROMPT}\n\n${userPrompt}` }],
+              parts: [{ text: promptText }],
             },
           ],
         }),
@@ -42,7 +37,6 @@ async function getDonorMatches(requestData, availableDonors) {
     }
 
     if (!response.ok) {
-      // Log the actual error body so we can see WHY it failed (bad key, wrong model, etc.)
       const errorBody = await response.text();
       console.error("Gemini API error response:", response.status, errorBody);
       return { success: false, error: "API_ERROR", message: `AI service returned status ${response.status}` };
@@ -69,4 +63,21 @@ async function getDonorMatches(requestData, availableDonors) {
   }
 }
 
-module.exports = { getDonorMatches };
+/**
+ * Calls the Gemini API to get donor match recommendations (ranking).
+ */
+async function getDonorMatches(requestData, availableDonors) {
+  const userPrompt = buildUserPrompt(requestData, availableDonors);
+  return callGemini(`${SYSTEM_PROMPT}\n\n${userPrompt}`);
+}
+
+/**
+ * Calls the Gemini API for one chatbot turn — classifies intent and
+ * extracts blood group / district / urgency if the user is searching for a donor.
+ */
+async function getChatIntent(userMessage, history) {
+  const prompt = buildChatPrompt(userMessage, history);
+  return callGemini(prompt);
+}
+
+module.exports = { getDonorMatches, getChatIntent };
