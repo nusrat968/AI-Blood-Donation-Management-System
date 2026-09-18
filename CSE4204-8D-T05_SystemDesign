@@ -1,0 +1,55 @@
+                                                    Project Title:  
+                                        AI Blood Donation Management System  
+                                               Course Code: CSE4204  
+                                                  Team Name : T05 
+                                                    Section : 8D 
+Team Leader Name & ID  
+Nusrat Jahan Sarna ; ID: 11220320968 Member list : 
+1.	Farhana Rahman Adiba ; ID : 11220320976 
+2.	Arpita Biswas : ID : 11220320978 
+3.	Nazia Musharrat Neha ; ID : 112203201039 
+ 
+ 
+System Architecture Description 
+The AI Blood Donation Management System follows a client-server architecture. Users interact with the system through a React.js frontend. The frontend sends requests to the Node.js and Express.js backend, which processes the data and communicates with the PostgreSQL database. 
+The backend is also connected to the Google Gemini API to provide AI-powered features such as donor matching, emergency prioritization, donor availability prediction, and chatbot assistance.  
+  
+ 
+ER Diagram Description 
+The database is designed to store and manage information related to users, donors, patients, hospitals, blood requests, donations, and notifications. 
+The Users table stores account information for all system users. Donors, Patients, and Hospitals are linked to the Users table through foreign keys. Blood requests are created by patients and stored in the Blood Requests table. Donation records are stored in the Donations table to maintain donation history. Notifications are used to inform users about emergency requests and system updates. 
+ 
+ 
+Use Case Diagram Description 
+The Use Case Diagram illustrates how different actors interact with the system. 
+The Donor can register, log in, update availability, view donation history, and respond to blood requests. The Patient can register, log in, search for donors, submit blood requests, and track request status. Hospitals can manage emergency requests and view donor information. The Admin manages users, monitors activities, and generates reports. 
+ 
+ 
+Activity Diagram Description 
+The Activity Diagram represents the workflow of the blood request and donor matching process. 
+The process starts when a patient submits a blood request. The system validates the request information and sends it to the AI module. The AI module analyzes blood group compatibility, donor location, donor availability, and emergency priority. Suitable donors are identified and notified immediately. After receiving notifications, donors can respond to the request. If a donor accepts, the request status is updated and the process is completed successfully.  
+
+ 
+API Design Overview 
+The system follows a RESTful API architecture. APIs are used to facilitate communication between the frontend, backend, database, and AI services. 
+Authentication APIs handle user registration and login operations. User APIs manage profile information. Blood Request APIs allow patients to create and track blood requests. Donor APIs manage donor availability and information. AI APIs provide donor matching, chatbot responses, and donor availability predictions. 
+ 
+AI Integration Overview 
+The system uses Google Gemini API along with basic machine learning logic. AI analyzes donor information, blood group compatibility, location, availability status, and emergency priority to recommend suitable donors. 
+The AI chatbot assists users by answering questions related to blood donation and emergency procedures.   
+  
+How AI Improves the System : 
+•	Speed: Finds matching donors in seconds instead of manual hours 
+•	Accuracy: Considers blood type, location, availability & health status simultaneously  
+•	Availability: 24/7 chatbot without human staff  
+•	Proactive: Predicts shortages before they occur so hospitals can prepare in advance 
+• Scalability: Handles thousands of simultaneous requests efficiently 
+ 
+References 
+[1]	Google Gemini API Documentation. Available: https://ai.google.dev/ 
+[2]	React Documentation. Available: https://react.dev/ 
+[3]	PostgreSQL Documentation. Available: https://www.postgresql.org/docs/ 
+[4]	Google Maps Platform Documentation. Available: https://developers.google.com/maps/documentation 
+[5]	Draw.io (Diagrams.net). Available: https://app.diagrams.net/ 
+[6]	Google Developers. Artificial Intelligence and Machine Learning Resources. Available: https://developers.google.com/machine-learning 
+ 
