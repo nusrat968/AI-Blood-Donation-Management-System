@@ -1,4 +1,4 @@
-// backend/ai/prompts/chatPrompt.js
+// ai/prompts/chatPrompt.js
 
 // Sent to Gemini as the systemInstruction.
 const CHAT_SYSTEM_PROMPT = `You are the AI Assistant for "LifeDrop", a blood donation platform connecting blood donors, patients, and hospitals in Bangladesh.
